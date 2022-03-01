@@ -9,8 +9,6 @@ trait webapp
   {
     if(!$this->config('use_notifications')) return;
 
-    $elib = 'vendor/booosta/notification/exec';
-    
     // dont show notification in actions where page will be forwarded
     if(in_array($this->action, ['newdo', 'editdo', 'deleteyes'])) $this->skip_notification_display = true;
 
@@ -18,7 +16,7 @@ trait webapp
     $postfix = $this->user_class == 'adminuser' ? '_admin' : '';
     
     if($this->TPL['_notifications']):
-      $code = "var res = this.id.split('_'); var id = res[1]; \$.ajax({ url: '$elib/seen{$postfix}.php?object_id=' + id });";
+      $code = "var res = this.id.split('_'); var id = res[1]; \$.ajax({ url: 'seen{$postfix}/default/' + id });";
       $this->add_jquery_ready("$('.booosta-notification').on('closed.bs.alert', function () { $code });");
     endif;
   }
