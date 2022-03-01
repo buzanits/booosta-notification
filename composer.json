@@ -1,0 +1,22 @@
+{
+    "name": "booosta/notification",
+    "description": "HTML notifications for the Booosta Framework",
+    "license": "LGPL-3.0-only",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "booosta\\notification\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Peter Buzanits",
+            "email": "peter@icb.at"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.0.0",
+        "booosta/webapp": "dev-master"
+    }
+}
